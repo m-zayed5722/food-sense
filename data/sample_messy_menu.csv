@@ -1,0 +1,101 @@
+raw_name,restaurant_name,price,ground_truth_name,ground_truth_category,ground_truth_cuisine,ground_truth_attributes
+ice cream sundae,Restaurant 13,$8.31,Ice Cream Sundae,Dessert,American,Large Portion
+Mozzarella Sticks,Restaurant 18,$8.99,Mozzarella Sticks,Appetizer,Italian,Vegetarian|Fried
+SPRING  ROLLS,Restaurant 3,$26.52,Spring Rolls,Appetizer,Chinese,Vegetarian|Steamed
+pad thai noodles,Restaurant 3,$20.61,Pad Thai Noodles,Main Dish,Thai,Spicy|Gluten-Free
+fish and chips,Restaurant 18,$18.93,Fish and Chips,Main Dish,American,Fried|Large Portion
+OCA COLA,Restaurant 4,$9.66,Coca Cola,Beverage,American,
+Fish and Chips,Restaurant 1,$22.32,Fish and Chips,Main Dish,American,Fried|Large Portion
+pad thai noodles,Restaurant 9,$29.32,Pad Thai Noodles,Main Dish,Thai,Spicy|Gluten-Free
+french fries,Restaurant 3,$8.05,French Fries,Side Dish,American,Fried|Vegetarian
+Tomato Soup,Restaurant 5,$9.07,Tomato Soup,Soup,American,Vegetarian|Healthy
+tomato soup,Restaurant 19,$11.28,Tomato Soup,Soup,American,Vegetarian|Healthy
+beef  burger  w/  cheese,Restaurant 2,$15.65,Beef Burger with Cheese,Burger,American,Large Portion
+buffalo wings,Restaurant 1,$29.64,Buffalo Wings,Appetizer,American,Spicy|Fried
+Spaghetti Carbonara,Restaurant 7,$13.11,Spaghetti Carbonara,Pasta,Italian,Large Portion
+Margherita Pizza,Restaurant 2,$7.19,Margherita Pizza,Pizza,Italian,Vegetarian
+tomato  soup,Restaurant 8,$15.68,Tomato Soup,Soup,American,Vegetarian|Healthy
+chocolate cake,Restaurant 17,$13.58,Chocolate Cake,Dessert,American,Large Portion
+spaghetti carbonara,Restaurant 10,$16.96,Spaghetti Carbonara,Pasta,Italian,Large Portion
+fries,Restaurant 18,$13.18,French Fries,Side Dish,American,Fried|Vegetarian
+FRESH ORANGE JUICE,Restaurant 9,$18.12,Fresh Orange Juice,Beverage,American,Healthy|Organic
+spaghetti  carbonara,Restaurant 9,$9.87,Spaghetti Carbonara,Pasta,Italian,Large Portion
+CALAMARI RINGS,Restaurant 12,$19.97,Calamari Rings,Appetizer,Italian,Fried
+chkn caesar salad,Restaurant 6,$27.14,Chicken Caesar Salad,Salad,American,Healthy|Protein-Rich
+CHICKEN SHAWARM WITH FRIES,Restaurant 8,$10.78,Chicken Shawarma with Fries,Main Dish,Middle Eastern,Spicy|Large Portion|Halal
+calamari rings,Restaurant 4,$15.23,Calamari Rings,Appetizer,Italian,Fried
+chocolat cake,Restaurant 7,$14.73,Chocolate Cake,Dessert,American,Large Portion
+Beef Burger with Cheese,Restaurant 4,$23.26,Beef Burger with Cheese,Burger,American,Large Portion
+Greek  Gyro,Restaurant 6,$20.76,Greek Gyro,Sandwich,Greek,Halal|Spicy
+GREEK GYRO,Restaurant 15,$16.60,Greek Gyro,Sandwich,Greek,Halal|Spicy
+Vegetable Stir Fry,Restaurant 6,$21.80,Vegetable Stir Fry,Main Dish,Chinese,Vegetarian|Healthy
+Greek Gyro,Restaurant 1,$7.10,Greek Gyro,Sandwich,Greek,Halal|Spicy
+Tomato Soup,Restaurant 5,$21.74,Tomato Soup,Soup,American,Vegetarian|Healthy
+Chicken Shawarma with Fries,Restaurant 14,$11.24,Chicken Shawarma with Fries,Main Dish,Middle Eastern,Spicy|Large Portion|Halal
+GARLIC BREAD,Restaurant 17,$29.70,Garlic Bread,Side Dish,Italian,Vegetarian
+tiramisu,Restaurant 17,$16.23,Tiramisu,Dessert,Italian,
+MISO SOUP,Restaurant 15,$15.97,Miso Soup,Soup,Japanese,Vegetarian|Healthy
+Vegetable Stir Fry,Restaurant 1,$26.55,Vegetable Stir Fry,Main Dish,Chinese,Vegetarian|Healthy
+French Fries,Restaurant 10,$24.07,French Fries,Side Dish,American,Fried|Vegetarian
+Rice Pilaf,Restaurant 20,$27.54,Rice Pilaf,Side Dish,Middle Eastern,Vegetarian
+tomato soup,Restaurant 13,$23.37,Tomato Soup,Soup,American,Vegetarian|Healthy
+rice pilaf,Restaurant 9,$26.03,Rice Pilaf,Side Dish,Middle Eastern,Vegetarian
+tomato soup,Restaurant 2,$24.09,Tomato Soup,Soup,American,Vegetarian|Healthy
+chiken tikka masala,Restaurant 7,$17.15,Chicken Tikka Masala,Main Dish,Indian,Spicy|Dairy-Free
+spaghetti carbonara,Restaurant 2,$14.32,Spaghetti Carbonara,Pasta,Italian,Large Portion
+hummus with pita,Restaurant 9,$27.15,Hummus with Pita,Appetizer,Middle Eastern,Vegetarian|Healthy
+Chicken Tikka Masala,Restaurant 11,$6.68,Chicken Tikka Masala,Main Dish,Indian,Spicy|Dairy-Free
+buffalo wings,Restaurant 9,$19.33,Buffalo Wings,Appetizer,American,Spicy|Fried
+chicken noodle soup,Restaurant 11,$14.43,Chicken Noodle Soup,Soup,American,Healthy
+calamari rings,Restaurant 9,$7.08,Calamari Rings,Appetizer,Italian,Fried
+Margherita Pizza,Restaurant 15,$14.17,Margherita Pizza,Pizza,Italian,Vegetarian
+margherita piza,Restaurant 4,$28.73,Margherita Pizza,Pizza,Italian,Vegetarian
+vegetable stir fry,Restaurant 7,$16.19,Vegetable Stir Fry,Main Dish,Chinese,Vegetarian|Healthy
+miso soup,Restaurant 1,$8.18,Miso Soup,Soup,Japanese,Vegetarian|Healthy
+Fresh Orange Juice,Restaurant 9,$19.82,Fresh Orange Juice,Beverage,American,Healthy|Organic
+French Fries,Restaurant 9,$10.35,French Fries,Side Dish,American,Fried|Vegetarian
+Chocolate Cake,Restaurant 16,$14.34,Chocolate Cake,Dessert,American,Large Portion
+bufflo wings,Restaurant 11,$8.77,Buffalo Wings,Appetizer,American,Spicy|Fried
+French Fries,Restaurant 18,$17.08,French Fries,Side Dish,American,Fried|Vegetarian
+margherita pizza,Restaurant 7,$12.40,Margherita Pizza,Pizza,Italian,Vegetarian
+Chicken Caesar Salad,Restaurant 4,$6.68,Chicken Caesar Salad,Salad,American,Healthy|Protein-Rich
+ice cream sundae,Restaurant 3,$12.62,Ice Cream Sundae,Dessert,American,Large Portion
+Garlic Bread,Restaurant 9,$25.68,Garlic Bread,Side Dish,Italian,Vegetarian
+Greek Gyro,Restaurant 16,$26.76,Greek Gyro,Sandwich,Greek,Halal|Spicy
+Calamari Rings,Restaurant 18,$15.04,Calamari Rings,Appetizer,Italian,Fried
+Buffalo Wings,Restaurant 13,$15.26,Buffalo Wings,Appetizer,American,Spicy|Fried
+fresh orange juice,Restaurant 15,$8.38,Fresh Orange Juice,Beverage,American,Healthy|Organic
+calamri rings,Restaurant 18,$15.11,Calamari Rings,Appetizer,Italian,Fried
+Buffalo Wings,Restaurant 8,$23.91,Buffalo Wings,Appetizer,American,Spicy|Fried
+Hummus with Pita,Restaurant 4,$16.64,Hummus with Pita,Appetizer,Middle Eastern,Vegetarian|Healthy
+green tea,Restaurant 15,$27.62,Green Tea,Beverage,Japanese,Healthy
+fresh orange juice,Restaurant 13,$12.58,Fresh Orange Juice,Beverage,American,Healthy|Organic
+Chocolate Cake,Restaurant 20,$23.87,Chocolate Cake,Dessert,American,Large Portion
+rice pilaf,Restaurant 3,$27.82,Rice Pilaf,Side Dish,Middle Eastern,Vegetarian
+buffalo wings,Restaurant 13,$29.20,Buffalo Wings,Appetizer,American,Spicy|Fried
+garlic bread,Restaurant 15,$27.82,Garlic Bread,Side Dish,Italian,Vegetarian
+greek gyro,Restaurant 20,$15.78,Greek Gyro,Sandwich,Greek,Halal|Spicy
+spaghetti carbonara,Restaurant 4,$29.53,Spaghetti Carbonara,Pasta,Italian,Large Portion
+mozzarella  sticks,Restaurant 7,$21.39,Mozzarella Sticks,Appetizer,Italian,Vegetarian|Fried
+tiramisu,Restaurant 6,$8.63,Tiramisu,Dessert,Italian,
+chkn shawarma w/ fries,Restaurant 15,$7.75,Chicken Shawarma with Fries,Main Dish,Middle Eastern,Spicy|Large Portion|Halal
+beef burger with cheese,Restaurant 4,$26.46,Beef Burger with Cheese,Burger,American,Large Portion
+Ice Cream Sundae,Restaurant 14,$16.83,Ice Cream Sundae,Dessert,American,Large Portion
+Chicken Tikka Masala,Restaurant 16,$7.60,Chicken Tikka Masala,Main Dish,Indian,Spicy|Dairy-Free
+RICE PILAF,Restaurant 14,$14.48,Rice Pilaf,Side Dish,Middle Eastern,Vegetarian
+Fresh Orange Juice,Restaurant 2,$29.23,Fresh Orange Juice,Beverage,American,Healthy|Organic
+tiramisu,Restaurant 9,$19.77,Tiramisu,Dessert,Italian,
+Garlic Bread,Restaurant 20,$20.72,Garlic Bread,Side Dish,Italian,Vegetarian
+Ice Cream Sundae,Restaurant 9,$6.68,Ice Cream Sundae,Dessert,American,Large Portion
+SPAGHETTI CARBONARA,Restaurant 5,$23.77,Spaghetti Carbonara,Pasta,Italian,Large Portion
+chicken shawarma with fries,Restaurant 2,$22.17,Chicken Shawarma with Fries,Main Dish,Middle Eastern,Spicy|Large Portion|Halal
+Spaghetti Carbonara,Restaurant 14,$12.55,Spaghetti Carbonara,Pasta,Italian,Large Portion
+French Fries,Restaurant 20,$7.30,French Fries,Side Dish,American,Fried|Vegetarian
+vegetable stir fry,Restaurant 12,$7.72,Vegetable Stir Fry,Main Dish,Chinese,Vegetarian|Healthy
+coca cola,Restaurant 19,$15.70,Coca Cola,Beverage,American,
+ice cream sundae,Restaurant 5,$11.66,Ice Cream Sundae,Dessert,American,Large Portion
+chiken caesar salad,Restaurant 19,$7.34,Chicken Caesar Salad,Salad,American,Healthy|Protein-Rich
+chicken noodle soup,Restaurant 2,$11.94,Chicken Noodle Soup,Soup,American,Healthy
+Calamari Rings,Restaurant 12,$14.94,Calamari Rings,Appetizer,Italian,Fried
+greek gyro,Restaurant 5,$20.27,Greek Gyro,Sandwich,Greek,Halal|Spicy
+beef burger with cheese,Restaurant 17,$8.23,Beef Burger with Cheese,Burger,American,Large Portion
