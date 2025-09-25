@@ -1,6 +1,6 @@
 # Menu Item Categorization & Enrichment with LLMs
 
-This project implements an AI-powered system for categorizing and enriching messy menu data using Large Language Models (LLMs). It demonstrates the power of combining rule-based systems with modern LLMs for structured data extraction.
+This project implements an GenAI-powered system for categorizing and enriching messy menu data using Large Language Models (LLMs). It demonstrates the power of combining rule-based systems with modern LLMs for structured data extraction.
 
 ## 📋 Features
 
