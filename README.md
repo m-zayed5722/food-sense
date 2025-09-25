@@ -1,6 +1,6 @@
 # Menu Item Categorization & Enrichment with LLMs
 
-This project implements an AI-powered system for categorizing and enriching messy menu data using Large Language Models (LLMs). Built as part of the Uber GenAI project, it demonstrates the power of combining rule-based systems with modern LLMs for structured data extraction.
+This project implements an AI-powered system for categorizing and enriching messy menu data using Large Language Models (LLMs). It demonstrates the power of combining rule-based systems with modern LLMs for structured data extraction.
 
 ## 📋 Features
 
@@ -235,6 +235,6 @@ For technical details, see `USAGE_GUIDE.md`.
 
 ---
 
-**Built with ❤️ for the Uber GenAI Project**
+**Built with ❤️ for the FoodSense GenAI Project**
 
 *Demonstrating the power of LLMs for structured data extraction and menu intelligence.*
