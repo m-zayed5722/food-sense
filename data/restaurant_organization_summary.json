@@ -1,0 +1,240 @@
+{
+  "total_restaurants": 18,
+  "total_items": 300,
+  "restaurants": {
+    "General": {
+      "item_count": 149,
+      "categories": [
+        "Dessert",
+        "Pizza",
+        "Sandwich",
+        "Side Dish",
+        "Main Dish",
+        "Beverage",
+        "Burger",
+        "Salad"
+      ],
+      "sample_items": [
+        "Mango Dragonfruit Starbucks Refreshers® Beverage",
+        "Banana, Walnut &amp; Pecan Loaf",
+        "Veranda Blend®",
+        "Caffè Misto",
+        "Pike Place® Roast"
+      ]
+    },
+    "Chick-fil-A": {
+      "item_count": 31,
+      "categories": [
+        "Main Dish",
+        "Beverage"
+      ],
+      "sample_items": [
+        "Chick-fil-A® Sandwich Meal",
+        "Chick-fil-A® Nuggets",
+        "Chick-fil-A® Nuggets Meal",
+        "Chick-fil-A® Deluxe Meal",
+        "Chick-fil-A® Spicy Chicken Sandwich Meal"
+      ]
+    },
+    "Burger King": {
+      "item_count": 25,
+      "categories": [
+        "Sandwich",
+        "Side Dish",
+        "Burger"
+      ],
+      "sample_items": [
+        "Big Bacon Cheddar Cheeseburger Combo",
+        "Original Cheeseburger Signature Stackburger Combo",
+        "Double Whopper Meal",
+        "Whopper Meal",
+        "Bacon King Sandwich Meal"
+      ]
+    },
+    "Taco Bell": {
+      "item_count": 18,
+      "categories": [
+        "Sandwich",
+        "Main Dish",
+        "Salad",
+        "Beverage"
+      ],
+      "sample_items": [
+        "Beefy Melt Burrito",
+        "Chicken Quesadilla",
+        "Crunchwrap Supreme®",
+        "Toasted Cheddar Chalupa",
+        "Black Bean Toasted Cheddar Chalupa"
+      ]
+    },
+    "Starbucks": {
+      "item_count": 14,
+      "categories": [
+        "Main Dish",
+        "Beverage"
+      ],
+      "sample_items": [
+        "Caramel Ribbon Crunch Frappuccino® Blended Beverage",
+        "Cinnamon Dolce Latte",
+        "Iced Caramel Macchiato",
+        "Caffè Americano",
+        "Featured Starbucks® Dark Roast Coffee"
+      ]
+    },
+    "Dairy Queen": {
+      "item_count": 14,
+      "categories": [
+        "Dessert",
+        "Side Dish",
+        "Main Dish"
+      ],
+      "sample_items": [
+        "Chicken Strip Basket - 6pc",
+        "Chicken Strip Basket - 4pc",
+        "Chicken Strip Basket - 6pc w/Drink",
+        "Cotton Candy BLIZZARD® Treat",
+        "NEW Caramel Fudge Cheesecake BLIZZARD® Treat"
+      ]
+    },
+    "Subway": {
+      "item_count": 12,
+      "categories": [
+        "Sandwich",
+        "Main Dish",
+        "Pizza",
+        "Beverage"
+      ],
+      "sample_items": [
+        "Italian B.M.T.® Footlong Pro (Double Protein)",
+        "Steak &amp; Cheese Footlong Regular Sub",
+        "Tuna Footlong Regular Sub",
+        "Steak, Egg &amp; Cheese Footlong with Regular Egg",
+        "Baja Turkey Avocado Footlong Pro (Double Protein)"
+      ]
+    },
+    "McDonald's": {
+      "item_count": 8,
+      "categories": [
+        "Main Dish"
+      ],
+      "sample_items": [
+        "Big Mac Meal",
+        "Double Quarter Pounder with Cheese Meal",
+        "10 Piece McNuggets Meal",
+        "20 Piece McNuggets",
+        "40 McNuggets"
+      ]
+    },
+    "Sonic": {
+      "item_count": 8,
+      "categories": [
+        "Main Dish",
+        "Burger",
+        "Beverage"
+      ],
+      "sample_items": [
+        "Mozzarella Sticks (6 ea.)",
+        "SONIC® Cheeseburger",
+        "Corn Dog",
+        "Red Bull® Slush",
+        "Strawberry Apricot Red Bull® Slush"
+      ]
+    },
+    "Five Guys": {
+      "item_count": 6,
+      "categories": [
+        "Burger"
+      ],
+      "sample_items": [
+        "Bourbon Bacon Cheeseburger Combo",
+        "Bacon Cheeseburger",
+        "Little Cheeseburger",
+        "Little Bacon Cheeseburger",
+        "Double Western Bacon Cheeseburger®"
+      ]
+    },
+    "Pizza Hut": {
+      "item_count": 4,
+      "categories": [
+        "Pizza"
+      ],
+      "sample_items": [
+        "Large Meat Lovers",
+        "Medium Meat Lovers",
+        "Epic Pepperoni-Stuffed Crust Pepperoni Pizza",
+        "Epic Stuffed Crust Create Your Own Pizza"
+      ]
+    },
+    "Wendy's": {
+      "item_count": 2,
+      "categories": [
+        "Dessert",
+        "Side Dish"
+      ],
+      "sample_items": [
+        "Baconator®",
+        "2 Spicy Chickens, 2 JBCs &amp; 4 SM Fries"
+      ]
+    },
+    "Dunkin'": {
+      "item_count": 2,
+      "categories": [
+        "Beverage"
+      ],
+      "sample_items": [
+        "Sunrise Batch Iced Coffee",
+        "Original Blend Iced Coffee"
+      ]
+    },
+    "Panda Express": {
+      "item_count": 2,
+      "categories": [
+        "Main Dish"
+      ],
+      "sample_items": [
+        "Orange Chicken Cub Meal",
+        "The Original Orange Chicken"
+      ]
+    },
+    "Carl's Jr": {
+      "item_count": 2,
+      "categories": [
+        "Burger",
+        "Salad"
+      ],
+      "sample_items": [
+        "Famous Star® with Cheese",
+        "Beyond Famous Star® with Cheese"
+      ]
+    },
+    "KFC": {
+      "item_count": 1,
+      "categories": [
+        "Side Dish"
+      ],
+      "sample_items": [
+        "Famous Bowl"
+      ]
+    },
+    "Papa John's": {
+      "item_count": 1,
+      "categories": [
+        "Main Dish"
+      ],
+      "sample_items": [
+        "The Works"
+      ]
+    },
+    "Chipotle": {
+      "item_count": 1,
+      "categories": [
+        "Burger"
+      ],
+      "sample_items": [
+        "Guacamole Bacon Angus Burger"
+      ]
+    }
+  },
+  "organization_date": "2025-09-24",
+  "organization_type": "restaurant_brands"
+}

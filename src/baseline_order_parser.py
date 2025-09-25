@@ -14,12 +14,96 @@ from src.order_schema import (
 
 
 class BaselineOrderParser:
-    """Rule-based parser for converting text to orders"""
+    """Enhanced rule-based parser for converting text to orders with restaurant detection"""
     
     def __init__(self, menu_items: List[MenuItemTemplate] = None):
         self.logger = logging.getLogger(__name__)
         self.menu_items = menu_items or OrderSchema.create_sample_menu()
         self.schema = OrderSchema()
+        
+        # Restaurant detection keywords
+        self.restaurant_keywords = {
+            "McDonald's": [
+                "mcdonald", "mcchicken", "big mac", "quarter pounder", "mcflurry", 
+                "mcnugget", "mcdouble", "filet-o-fish", "happy meal", "mcpick", "mccafe"
+            ],
+            "Starbucks": [
+                "starbucks", "frappuccino", "macchiato", "americano", "latte", "venti", 
+                "grande", "caramel ribbon", "pike place", "blonde roast", "cold brew"
+            ],
+            "Taco Bell": [
+                "taco bell", "taco", "burrito", "quesadilla", "chalupa", "crunchwrap", 
+                "beefy", "nacho", "doritos locos", "mexican pizza", "cantina"
+            ],
+            "KFC": [
+                "kfc", "colonel", "popcorn chicken", "famous bowl", "zinger", "hot wings",
+                "original recipe", "extra crispy", "chicken bucket"
+            ],
+            "Burger King": [
+                "burger king", "whopper", "king", "chicken fries", "impossible whopper",
+                "croissanwich", "onion rings", "hershey's pie"
+            ],
+            "Subway": [
+                "subway", "footlong", "italian bmt", "meatball marinara", "turkey breast",
+                "spicy italian", "veggie delite", "oven roasted"
+            ],
+            "Pizza Hut": [
+                "pizza hut", "pepperoni pizza", "meat lovers", "supreme pizza", "stuffed crust",
+                "pan pizza", "thin crust", "personal pan"
+            ],
+            "Chick-fil-A": [
+                "chick-fil-a", "chick fil a", "chicken sandwich", "waffle fries", "nuggets",
+                "spicy deluxe", "original chicken", "polynesian sauce"
+            ],
+            "Wendy's": [
+                "wendy", "baconator", "frosty", "spicy chicken", "dave's single",
+                "jr bacon cheeseburger", "chicken go wrap"
+            ],
+            "Dairy Queen": [
+                "dairy queen", "dq", "blizzard", "dilly bar", "hot dog", "chicken strip basket",
+                "oreo blizzard", "brazier burger"
+            ],
+            "Five Guys": [
+                "five guys", "cajun fries", "bacon cheeseburger", "little cheeseburger",
+                "all the way", "regular fries"
+            ],
+            "Chipotle": [
+                "chipotle", "burrito bowl", "barbacoa", "carnitas", "sofritas", "guac",
+                "cilantro lime", "pico de gallo"
+            ],
+            "Dunkin'": [
+                "dunkin", "donut", "iced coffee", "coolatta", "munchkins", "bagel",
+                "boston kreme", "glazed donut"
+            ],
+            "Popeyes": [
+                "popeyes", "louisiana", "spicy chicken", "biscuit", "red beans",
+                "chicken tender", "cajun fries"
+            ],
+            "Arby's": [
+                "arby", "roast beef", "curly fries", "beef n cheddar", "turkey gyro",
+                "classic roast beef", "horsey sauce"
+            ],
+            "Sonic": [
+                "sonic", "cherry limeade", "mozzarella sticks", "corn dog", "slush",
+                "ocean water", "cherry slush"
+            ],
+            "Panda Express": [
+                "panda express", "orange chicken", "chow mein", "fried rice", "beijing beef",
+                "honey walnut shrimp", "teriyaki chicken"
+            ],
+            "Papa John's": [
+                "papa john", "garlic sauce", "pepperoni pizza", "the works",
+                "better ingredients", "papa's pizza"
+            ],
+            "Carl's Jr": [
+                "carl's jr", "famous star", "western bacon", "hand-breaded",
+                "six dollar burger", "crisscut fries"
+            ],
+            "Wingstop": [
+                "wingstop", "lemon pepper", "garlic parmesan", "atomic wings", "louisiana rub",
+                "boneless wings", "original hot"
+            ]
+        }
         
         # Build keyword indexes for faster matching
         self._build_indexes()
@@ -28,6 +112,7 @@ class BaselineOrderParser:
         """Build keyword indexes for menu items"""
         self.name_to_item = {}
         self.keyword_to_item = {}
+        self.restaurant_to_items = {}
         
         for item in self.menu_items:
             # Index by exact name
@@ -36,6 +121,55 @@ class BaselineOrderParser:
             # Index by keywords
             for keyword in item.keywords:
                 self.keyword_to_item[keyword.lower()] = item
+            
+            # Index by restaurant
+            restaurant = self._identify_item_restaurant(item)
+            if restaurant not in self.restaurant_to_items:
+                self.restaurant_to_items[restaurant] = []
+            self.restaurant_to_items[restaurant].append(item)
+    
+    def _identify_item_restaurant(self, item: MenuItemTemplate) -> str:
+        """Identify which restaurant an item belongs to"""
+        name_lower = item.name.lower()
+        
+        for restaurant, keywords in self.restaurant_keywords.items():
+            if any(keyword in name_lower for keyword in keywords):
+                return restaurant
+        
+        return "General"
+    
+    def detect_restaurant(self, text: str) -> Tuple[Optional[str], float]:
+        """Detect restaurant from input text with confidence score"""
+        text_lower = text.lower()
+        restaurant_scores = {}
+        
+        # Check for explicit restaurant mentions
+        for restaurant, keywords in self.restaurant_keywords.items():
+            score = 0
+            for keyword in keywords:
+                if keyword in text_lower:
+                    # Longer keywords get higher scores
+                    keyword_score = len(keyword) / 10.0
+                    # Exact word boundaries get bonus
+                    if re.search(r'\b' + re.escape(keyword) + r'\b', text_lower):
+                        keyword_score *= 1.5
+                    score += keyword_score
+            
+            if score > 0:
+                restaurant_scores[restaurant] = score
+        
+        if not restaurant_scores:
+            return None, 0.0
+        
+        # Return restaurant with highest score
+        best_restaurant = max(restaurant_scores.items(), key=lambda x: x[1])
+        confidence = min(best_restaurant[1] / 2.0, 1.0)  # Normalize confidence
+        
+        return best_restaurant[0], confidence
+    
+    def get_restaurant_menu_items(self, restaurant: str) -> List[MenuItemTemplate]:
+        """Get menu items for a specific restaurant"""
+        return self.restaurant_to_items.get(restaurant, [])
     
     def preprocess_text(self, text: str) -> str:
         """Clean and normalize input text"""
@@ -362,36 +496,29 @@ class BaselineOrderParser:
         
         return modifications
     
-    def find_menu_items(self, text: str) -> List[Tuple[MenuItemTemplate, float]]:
-        """Find menu items mentioned in text with confidence scores"""
+    def find_menu_items(self, text: str, restaurant_items: List[MenuItemTemplate] = None) -> List[Tuple[MenuItemTemplate, float]]:
+        """Find menu items mentioned in text with confidence scores, optionally filtered by restaurant"""
+        search_items = restaurant_items if restaurant_items is not None else self.menu_items
         found_items = []
-        used_positions = set()  # Track which parts of text we've already matched
         
-        # Split text into words for positional tracking
-        words = text.split()
+        # Build temporary keyword index for search items
+        search_keywords = {}
+        for item in search_items:
+            for keyword in item.keywords:
+                search_keywords[keyword.lower()] = item
         
         # First pass: Look for exact multi-word matches (highest priority)
-        for keyword, item in self.keyword_to_item.items():
+        for keyword, item in search_keywords.items():
             if len(keyword.split()) > 1:  # Multi-word keywords
                 if keyword in text:
-                    # Find position of this match
-                    start_pos = text.find(keyword)
-                    end_pos = start_pos + len(keyword)
-                    
-                    # Check if this position overlaps with already used positions
-                    if not any(pos in used_positions for pos in range(start_pos, end_pos)):
-                        confidence = 0.95  # High confidence for exact multi-word matches
+                    confidence = 0.95  # High confidence for exact multi-word matches
+                    if not any(existing_item == item for existing_item, _ in found_items):
                         found_items.append((item, confidence))
-                        
-                        # Mark positions as used
-                        for pos in range(start_pos, end_pos):
-                            used_positions.add(pos)
         
         # Second pass: Look for exact single-word matches
-        for keyword, item in self.keyword_to_item.items():
+        for keyword, item in search_keywords.items():
             if len(keyword.split()) == 1:  # Single word keywords
                 # Use word boundaries to avoid partial matches
-                import re
                 pattern = r'\b' + re.escape(keyword) + r'\b'
                 if re.search(pattern, text):
                     # Check if this is a new item (not already found with multi-word match)
@@ -399,9 +526,10 @@ class BaselineOrderParser:
                         confidence = 0.9  # High confidence for exact single-word matches
                         found_items.append((item, confidence))
         
-        # Third pass: Look for partial/fuzzy matches only if we haven't found many items
-        if len(found_items) < 2:
-            for keyword, item in self.keyword_to_item.items():
+        # Third pass: Look for partial matches only if we haven't found items and no restaurant filter
+        if len(found_items) == 0 and restaurant_items is None:
+            words = text.split()
+            for keyword, item in search_keywords.items():
                 if not any(existing_item == item for existing_item, _ in found_items):
                     # Check for partial matches in individual words
                     for word in words:
@@ -416,29 +544,42 @@ class BaselineOrderParser:
         # Remove duplicates and sort by confidence
         unique_items = {}
         for item, confidence in found_items:
-            item_key = item.name  # Use name as key instead of object
+            item_key = item.name
             if item_key not in unique_items or confidence > unique_items[item_key][1]:
                 unique_items[item_key] = (item, confidence)
         
         result = [(item, conf) for item, conf in unique_items.values()]
-        result.sort(key=lambda x: x[1], reverse=True)  # Sort by confidence descending
+        result.sort(key=lambda x: x[1], reverse=True)
         
         return result
     
     def parse_order(self, text: str) -> Order:
-        """Parse natural language text into a structured order"""
+        """Parse natural language text into a structured order with restaurant detection"""
         self.logger.info(f"Parsing order text: '{text}'")
         
         # Preprocess text
         clean_text = self.preprocess_text(text)
+        
+        # Detect restaurant first
+        detected_restaurant, confidence = self.detect_restaurant(clean_text)
+        self.logger.info(f"Detected restaurant: {detected_restaurant} (confidence: {confidence:.2f})")
+        
+        # Get restaurant-specific menu items
+        if detected_restaurant and confidence > 0.3:
+            restaurant_items = self.get_restaurant_menu_items(detected_restaurant)
+            self.logger.info(f"Using {len(restaurant_items)} items from {detected_restaurant}")
+        else:
+            # Fall back to all items if no restaurant detected or low confidence
+            restaurant_items = None
+            self.logger.info("No restaurant detected or low confidence, using all menu items")
         
         # Extract information
         quantities = self.extract_quantities(clean_text)
         sizes = self.extract_sizes(clean_text)
         modifications = self.extract_modifications(clean_text)
         
-        # Find menu items
-        found_items = self.find_menu_items(clean_text)
+        # Find menu items (restaurant-filtered if detected)
+        found_items = self.find_menu_items(clean_text, restaurant_items)
         
         # Create order items
         order_items = []
@@ -491,10 +632,16 @@ class BaselineOrderParser:
             order_items.append(order_item)
             self.logger.info(f"Added item: {order_item.name} (qty: {quantity}, size: {size})")
         
+        # Store detected restaurant info
+        customer_notes = text if len(text) > 100 else None
+        if detected_restaurant:
+            restaurant_note = f"Restaurant: {detected_restaurant}"
+            customer_notes = restaurant_note if not customer_notes else f"{restaurant_note}\n{customer_notes}"
+        
         # Create and return order
         order = Order(
             items=order_items,
-            customer_notes=text if len(text) > 100 else None  # Store original if long
+            customer_notes=customer_notes
         )
         
         self.logger.info(f"Parsed order with {len(order_items)} items, total: ${order.total_amount:.2f}")
@@ -507,6 +654,12 @@ class BaselineOrderParser:
         
         summary_lines = []
         summary_lines.append("🛒 ORDER SUMMARY")
+        
+        # Extract restaurant info from customer notes
+        if order.customer_notes and "Restaurant:" in order.customer_notes:
+            restaurant_line = [line for line in order.customer_notes.split('\n') if 'Restaurant:' in line][0]
+            summary_lines.append(f"🏪 {restaurant_line}")
+        
         summary_lines.append("=" * 40)
         
         for item in order.items:
